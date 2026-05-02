@@ -1,7 +1,34 @@
 import java.util.*;
-// class Library {
+class Library {
 
-// }
+// ================= search book =================
+    public void searchBook(int id) {
+        System.out.println("Searching book...");
+        for (Book b : books) {
+            if (b.id == id) {
+                System.out.println("Found: " + b);
+                return;
+            }
+        }
+        System.out.println("Book not found!");
+    }
+
+    // ================= Issue Book =================
+    public void issueBook(int id) {
+        System.out.println("Issuing book...");
+        for (Book b : books) {
+            if (b.id == id) {
+                if (!b.isIssued) {
+                    b.isIssued = true;
+                    System.out.println("Book issued successfully!");
+                } else {
+                    System.out.println("Book already issued!");
+                }
+                return;
+            }
+        }
+        System.out.println("Book not found!");
+    }}
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
