@@ -22,7 +22,26 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-       // Library library = new Library();
+        Library library = new Library{
+            // ================= add book  =================
+    public void addBook(Book book) {
+        books.add(book);
+        System.out.println("Book added successfully!");
+    }
+// mohua
+    // ================= view Bookss =================
+    public void viewBooks() {
+        System.out.println("Viewing all books...");
+        if (books.isEmpty()) {
+            System.out.println("No books available.");
+            return;
+        }
+
+        for (Book b : books) {
+            System.out.println(b);
+        }
+    }
+        };
 
         while (true) {
             System.out.println("\n===== Library Management System =====");
