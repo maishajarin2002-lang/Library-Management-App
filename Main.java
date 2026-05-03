@@ -1,4 +1,26 @@
 import java.util.*;
+class Book {
+    
+    // empty 
+    int id;
+    String title;
+    String author;
+    boolean isIssued;
+
+    // store in book 
+    public Book(int id, String title, String author) {
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.isIssued = false;
+    }
+
+    // print 
+    @Override
+    public String toString() {
+        return "ID: " + id + ", Title: " + title + ", Author: " + author + ", Issued: " + isIssued;
+    }
+}
  class Library {
 // ================= add book  =================
     public void addBook(Book book) {
