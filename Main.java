@@ -18,6 +18,37 @@ import java.util.*;
             System.out.println(b);
         }
     }
+    // ================= return Book =================
+    public void returnBook(int id) {
+        System.out.println("Returning book...");
+        for (Book b : books) {
+            if (b.id == id) {
+                if (b.isIssued) {
+                    b.isIssued = false;
+                    System.out.println("Book returned successfully!");
+                } else {
+                    System.out.println("Book was not issued!");
+                }
+                return;
+            }
+        }
+        System.out.println("Book not found!");
+    }
+
+    // =================delete Book =================
+    public void deleteBook(int id) {
+        System.out.println("Deleting book...");
+        Iterator<Book> it = books.iterator();
+        while (it.hasNext()) {
+            Book b = it.next();
+            if (b.id == id) {
+                it.remove();
+                System.out.println("Book deleted successfully!");
+                return;
+            }
+        }
+        System.out.println("Book not found!");
+    }
  }
 public class Main {
     public static void main(String[] args) {
